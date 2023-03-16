@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
@@ -7,14 +7,13 @@ import device from './Devices';
 import '../index.css'
 import { Link } from "react-router-dom";
 
-
 library.add({faBars});
 
 const DivLetterIconHeader = styled.div`        
+    display: none;        
     font-size: 2rem;
     font-weight: bold;
-    float: left;
-    margin-top: 0.7rem;
+    float: left;    
     margin-left: 1rem;
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
@@ -23,57 +22,89 @@ const DivLetterIconHeader = styled.div`
     &:hover{
         color: rgb(128, 204, 255);
     }        
-`
-
-const UlHeader = styled.div`    
-    display: block;       
-    float:right;
     @media ${device.tablet} { 
         display: flex;        
     }    
 `
 
+const UlHeader = styled.div`    
+    display: block;                
+    @media ${device.mobileS} { 
+        display: flex;        
+        flex-direction:column;
+        width:100%;
+        background-color: black;
+        float:right;
+        display: flex;        
+    }   
+    @media ${device.mobileM} { 
+        display: flex;        
+        flex-direction:column;
+        width:100%;
+        background-color: black;
+        float:right;
+        display: flex;        
+    }   
+    @media ${device.mobileL} { 
+        display: flex;        
+        flex-direction:column;
+        width:100%;
+        background-color: black;
+        float:right;        
+    }   
+    @media ${device.tablet} { 
+        display: flex;
+        flex-direction: row;
+        width:auto;
+    }    
+`
+
 const LiHeader = styled.div`    
-    margin-right: 0rem;
-    margin-bottom:1rem;    
-    margin-top:0rem;    
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+    margin-right: 0rem;    
+    margin-top:0rem;  
+    background-color:black;  
+    font-size:2rem;        
     @media ${device.tablet} { 
         margin-right: 1rem;       
     }    
-`
-
-const LinkPrimaryHeader = styled.a`    
-    padding: 0.5rem;
-    color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: 0.7s;
-    float:right;
-    cursor: pointer;
-    &:hover{
-        color: rgb(128, 204, 255);
-    }       
+    @media ${device.mobileS} { 
+        margin-top: -1rem;    
+    }   
+    @media ${device.mobileM} { 
+        margin-top: -1rem;    
+    }   
+    @media ${device.mobileL} { 
+        margin-top: -1rem;    
+    }   
     @media ${device.tablet} { 
-        padding: 1rem;
+        margin-top: 0rem;    
     }    
 `
 
-const LinkSecondaryHeader = styled.a`        
-    border-style: none;
-    padding: 0.5rem;    
-    color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: 0.7s;
-    float:right;
-    cursor: pointer;
-    &:hover{
-        color: rgb(128, 204, 255);
-        border-color: whitesmoke;    
-    }    
+const LiHeaderHamburger = styled.div`     
+    display:flex;
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */    
+    margin-top: -0.5rem;    
+    background-color:black;      
+    font-size:1rem;         
+    justify-content:center;        
+    @media ${device.mobileS} { 
+        font-size:2rem;         
+        margin-top: 1rem;         
+    }   
+    @media ${device.mobileM} { 
+        font-size:2rem;         
+        margin-top: 1rem;         
+    }   
+    @media ${device.mobileL} { 
+        font-size:2rem;         
+        margin-top: 1rem;         
+    }   
     @media ${device.tablet} { 
-        padding: 1rem;
-        border-style: solid;
-        border-color: rgb(128, 204, 255);    
-    }    
+        font-size:1.5rem;     
+        margin-top: -0.5rem;    
+    }   
 `
 
 const HambugerBtn = styled.button`    
@@ -82,8 +113,10 @@ const HambugerBtn = styled.button`
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
     transition: 0.7s;    
+    font-size:2rem;
     float:right;
-    cursor: pointer;
+    cursor: pointer;    
+    border:none;
     &:hover{
         color: rgb(128, 204, 255);
     }
@@ -92,18 +125,26 @@ const HambugerBtn = styled.button`
     }    
 `
 
+const Overlay = styled.div`    
+    position: fixed; /* Sit on top of the page content */    
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black; /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; 
+`
 
-const Header = () => {
- 
-    const [menuActive, setMenuActive] = useState(true);
- 
+const Header = () => { 
+    const [menuActive, setMenuActive] = useState(false);     
     const handlerSetMenuActive = () =>{    
         menuActive ? setMenuActive(false) :setMenuActive(true);        
     }
 
-    let widthMatch = window.matchMedia(device.tablet);
-    
-    // mm in the function arg is the matchMedia object, passed back into the function
+    let widthMatch = window.matchMedia(device.tablet);    
     widthMatch.addEventListener('change', function(mm) {
         if (mm.matches) {
             setMenuActive(true);            
@@ -126,11 +167,22 @@ const Header = () => {
 
         this.lastScroll = scrollY ;
     }
+
+    const handleSwichMenu = () =>{
+        if(window.innerWidth < 728){
+            setMenuActive(false);
+        }
+    }
+
+    useEffect(() => {
+        (window.innerWidth >= 728 && menuActive == false) && setMenuActive(true)
+    }, []);
     
+
   return (
     <div id='headerPrincipalDiv' className='divPrincipal'>
-        <DivLetterIconHeader>
-            F
+        <DivLetterIconHeader>            
+            <Link onClick={handleSwichMenu} to={`/`} className='linkHeader' >F</Link>
         </DivLetterIconHeader>        
         <UlHeader>
                 <LiHeader>
@@ -139,27 +191,31 @@ const Header = () => {
                     </HambugerBtn>
                 </LiHeader>
                 {
-                    menuActive &&
-                    <>  
-                        <LiHeader>
-                            <Link to={`/`} className='linkHeader' >Init</Link>
-                        </LiHeader>  
-                        <LiHeader>
-                            <Link to={`/About`} className='linkHeader' >About me</Link>
-                        </LiHeader>
-                        <LiHeader>
-                            <Link to={`/Experience`} className='linkHeader' >Experience</Link>
-                        </LiHeader>
-                        <LiHeader>
-                            <Link to={`/Work`} className='linkHeader' >Works</Link>
-                        </LiHeader>
-                        <LiHeader>
-                            <Link to={`/Contact`} className='linkHeader' >Contact</Link>
-                        </LiHeader>                        
-                        <LiHeader>
-                            <Link to={`/Experience`} className='linkHeader'>My CV</Link>
-                        </LiHeader>
-                    </>                
+                    (window.innerWidth < 728 && menuActive) && <Overlay></Overlay>
+                }
+                {
+                    menuActive 
+                    &&
+                    <>                                                  
+                        <LiHeaderHamburger>
+                            <Link onClick={handleSwichMenu} to={`/`} className='linkHeader' >Init</Link>
+                        </LiHeaderHamburger>  
+                        <LiHeaderHamburger>
+                            <Link onClick={handleSwichMenu} to={`/About`} className='linkHeader' >About me</Link>
+                        </LiHeaderHamburger>
+                        <LiHeaderHamburger>
+                            <Link onClick={handleSwichMenu} to={`/Experience`} className='linkHeader' >Experience</Link>
+                        </LiHeaderHamburger>
+                        <LiHeaderHamburger>
+                            <Link onClick={handleSwichMenu} to={`/Work`} className='linkHeader' >Works</Link>
+                        </LiHeaderHamburger>
+                        <LiHeaderHamburger>
+                            <Link onClick={handleSwichMenu} to={`/Contact`} className='linkHeader' >Contact</Link>
+                        </LiHeaderHamburger>                        
+                        <LiHeaderHamburger>
+                            <a onClick={handleSwichMenu} href="src/media/FabianCV.pdf" download="FabianCV.pdf"  className='linkHeader'>My CV</a>
+                        </LiHeaderHamburger>                        
+                    </>                                                        
                 }                    
             </UlHeader>
     </div>    

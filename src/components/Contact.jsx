@@ -8,6 +8,7 @@ const PrincipalDiv = styled.div`
     margin-left : 15%;
     margin-right : 15%;        
     margin-bottom: 10%;    
+    margin-top: 10%;    
     @media ${device.mobileM} { 
         width : 100%;
         margin-left : 0%;
@@ -77,20 +78,30 @@ const BtnContainer1 = styled.div`
     text-align:center;
 `
 
-const SendMsgBtn = styled.button`
+const SendMsgBtn = styled.a`    
     padding: 1rem;
     margin-top: 1rem;    
     background-color: transparent;
     border-style: solid;
     border-color: rgb(128, 204, 255);
-    color: whitesmoke;
+    color: rgb(128, 204, 255);
     font-weight:bold;
     font-family:Arial, Helvetica, sans-serif;
+    text-decoration:none;
     cursor: pointer;
-    transition:0.7s;
+    transition:0.7s;    
     &:hover{
         border-color:whitesmoke;
-        color:rgb(128, 204, 255);
+        color:whitesmoke;
+    }
+    @media ${device.mobileM} { 
+        display:block;
+    }
+    @media ${device.mobileM} { 
+        display:block;
+    }
+    @media ${device.tablet} { 
+        display:inline;
     }
 `
 
@@ -103,7 +114,7 @@ const Contact = () => {
             Although I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </TextSection>
         <BtnContainer1>
-            <SendMsgBtn>Send a MSG!</SendMsgBtn>
+            <SendMsgBtn href='mailto:fcalderon@gmail.com?subject=DM&body= ¡HELLO! '>Send a MSG!</SendMsgBtn>
         </BtnContainer1>        
     </PrincipalDiv>
   )

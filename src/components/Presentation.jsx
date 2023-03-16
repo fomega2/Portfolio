@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import device from './Devices';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faAddressBook, faProjectDiagram } from "@fortawesome/free-solid-svg-icons";
+import { faBriefcase, faAddressBook, faProjectDiagram, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-library.add({faBriefcase, faAddressBook, faProjectDiagram});
+library.add({faBriefcase, faAddressBook, faProjectDiagram, faUser});
 
 const DivPrincipalPresentation = styled.div`
     display: block;        
@@ -92,23 +92,6 @@ const Paragraph = styled.h4`
     text-align: center;    
 `
 
-const SendMsgBtn = styled.button`
-    padding: 1rem;
-    margin-top: 1rem;
-    background-color: transparent;
-    border-style: solid;
-    border-color: rgb(128, 204, 255);
-    color: whitesmoke;
-    font-weight:bold;
-    font-family:Arial, Helvetica, sans-serif;
-    cursor: pointer;
-    transition:0.7s;
-    &:hover{
-        border-color:whitesmoke;
-        color:rgb(128, 204, 255);
-    }
-`
-
 const Presentation = () => {
   return (
     <DivPrincipalPresentation>
@@ -120,21 +103,22 @@ const Presentation = () => {
         </DivBlockPresentation>
         <DivFlexPresentation>        
         <Link to={`About`} className="txtRouter">
+            <FontAwesomeIcon className='iconRouter' icon="fas fa-user" />            
+            About
+        </Link>                                
+        <Link to={`Experience`} className="txtRouter">
             <FontAwesomeIcon className='iconRouter' icon="fas fa-briefcase" />            
             Experience
         </Link>            
-        <Link to={`About`} className="txtRouter">
+        <Link to={`Work`} className="txtRouter">
             <FontAwesomeIcon className='iconRouter' icon="fas fa-project-diagram" />            
             Works
         </Link>                    
-        <Link to={`About`} className="txtRouter">
+        <Link to={`Contact`} className="txtRouter">
             <FontAwesomeIcon className='iconRouter' icon="fas fa-address-book" />            
-            About
+            Contact
         </Link>                            
-        <Link to={`About`} className="txtRouter">
-            <FontAwesomeIcon className='iconRouter' icon="fas fa-address-book" />            
-            About
-        </Link>                                    
+            
         </DivFlexPresentation>
     </DivPrincipalPresentation>
   )
