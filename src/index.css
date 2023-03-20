@@ -73,6 +73,7 @@
     transition: 0.6s;
     text-align: center;
     margin: 1%;
+    width: 100%;
 }
 
 .txtRouter:hover{

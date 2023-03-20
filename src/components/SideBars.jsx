@@ -9,11 +9,11 @@ library.add({faGithub, faLinkedin});
 
 const SideBarL = styled.div`
     display:block;
-    position: sticky;    
+    position: fixed;    
     color:  rgb(128, 204, 255);    
     transform-origin: bottom left;    
-    top:50%;
-    margin-left:0%;
+    top:50%;    
+    visibility: visible;    
     @media ${device.mobileS} {         
         display:none;
     }    
@@ -25,22 +25,27 @@ const SideBarL = styled.div`
     }    
     @media ${device.tablet} {            
         display:block;
+        visibility: hidden;
     }    
     @media ${device.laptop} {            
         display:block;
+        visibility: visible;
     }    
     @media ${device.laptopL} {            
         display:block;
+        visibility: visible;
     }    
 `
 
 const SideBarR = styled.div`
     display:block;
-    position: sticky;    
+    position: fixed;    
     color:  rgb(128, 204, 255);        
     rotate:90deg;
-    top:48%;
-    margin-left: 95%;
+    top:50%;
+    z-index:100;
+    right: -4%;
+    visibility: visible;
     @media ${device.mobileS} {         
         display:none;
     }    
@@ -52,12 +57,15 @@ const SideBarR = styled.div`
     }    
     @media ${device.tablet} {            
         display:block;
+        visibility: hidden;
     }    
     @media ${device.laptop} {            
         display:block;
+        visibility: visible;
     }    
     @media ${device.laptopL} {            
         display:block;
+        visibility: visible;
     }    
 `
 
@@ -105,13 +113,13 @@ const ProyectLinkR = styled.a`
 
 const SideBars = () => {        
   return (
-    <>
+    <div>
         <SideBarL>               
             <LinkContainer>
                 <ProyectLink href='https://github.com/fomega2' target={"_blank"}>            
                     <FontAwesomeIcon icon={"fa-brands fa-github"} />
                 </ProyectLink>
-                <ProyectLink href='https://www.linkedin.com/in/fabian-calderon-dev/'>            
+                <ProyectLink href='https://www.linkedin.com/in/fabian-calderon-dev/' target={"_blank"}>            
                     <FontAwesomeIcon icon={"fa-brands fa-linkedin"} />
                 </ProyectLink>
             </LinkContainer>                          
@@ -123,7 +131,7 @@ const SideBars = () => {
                 </ProyectLinkR>
             </LinkContainer>        
         </SideBarR>
-    </>    
+    </div>    
   )
 }
 

@@ -199,10 +199,7 @@ const Header = () => {
                     <>                                                  
                         <LiHeaderHamburger>
                             <Link onClick={handleSwichMenu} to={`/`} className='linkHeader' >Init</Link>
-                        </LiHeaderHamburger>  
-                        <LiHeaderHamburger>
-                            <Link onClick={handleSwichMenu} to={`/About`} className='linkHeader' >About me</Link>
-                        </LiHeaderHamburger>
+                        </LiHeaderHamburger>                          
                         <LiHeaderHamburger>
                             <Link onClick={handleSwichMenu} to={`/Experience`} className='linkHeader' >Experience</Link>
                         </LiHeaderHamburger>

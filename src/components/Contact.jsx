@@ -48,7 +48,7 @@ const SubTittleSection = styled.h5`
     @media ${device.mobileM} { 
         font-size: 1.8rem;
     }
-    @media ${device.mobileM} { 
+    @media ${device.mobileL} { 
         font-size: 1.8rem;
     }
     @media ${device.tablet} { 

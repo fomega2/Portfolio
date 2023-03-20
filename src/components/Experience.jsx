@@ -36,19 +36,34 @@ const PrincipalDiv = styled.div`
         width : 50%;
         margin-left : 25%;
         margin-right : 25%;
-        margin-top : 0%;
+        margin-top : 10%;
     }        
 `
 
 const TittleSection = styled.h4`    
     margin-bottom:1%;
     color:  rgb(128, 204, 255);
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight:bold;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;    
-    @media ${device.tablet} { 
-        font-size: 2rem;
+    text-align: left;    
+    @media ${device.mobileS} {         
+        font-size: 2.5rem;
+    }    
+    @media ${device.mobileM} {         
+        font-size: 2.5rem;
+    }    
+    @media ${device.mobileL} {          
+        font-size: 2.5rem;
+    }    
+    @media ${device.tablet} {            
+        font-size: 3rem;
+    }    
+    @media ${device.laptop} {            
+        font-size: 3rem;
+    }    
+    @media ${device.laptopL} {            
+        font-size: 3rem;
     }    
 `
 const SubTittle1Section = styled.p`
@@ -57,7 +72,7 @@ const SubTittle1Section = styled.p`
     font-size: 1rem;
     font-weight:bold;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+    text-align: left;
     @media ${device.tablet} { 
         font-size: 1.5rem;
     }    
@@ -78,32 +93,20 @@ const ExperienceYears = styled.div`
 const CompanyName = styled.a`
     margin-bottom:1%;
     color:  whitesmoke;
-    font-size: 1rem;
+    font-size: 1.5rem;        
     font-weight:bold;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     cursor: pointer;
     transition: 0.6s;
     &:hover{
-        color:  rgb(128, 204, 255);
-        font-size:1.1rem;
-    }
-    @media ${device.tablet} { 
-        font-size: 1.5rem;
-        &:hover{
-            color:  rgb(128, 204, 255);
-            font-size:1.6rem;
-        }
+        color:  rgb(128, 204, 255);        
     }    
 `
 
 const UlTecnologiesList = styled.ul`
-    width:80%;    
-    @media ${device.tablet} { 
-        width:70%;
-        margin-left:15%;
-        margin-right:15%;
-    }
+    text-align:center;
+    width:100%;        
 `
 
 const LiTecnologiesList = styled.li`
@@ -118,20 +121,69 @@ const LiTecnologiesList = styled.li`
     }
 `
 
+const TittleExp= styled.h2`
+    color:  rgb(128, 204, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1.5rem;
+    margin-left:1.5rem;
+`
+
+const Separator= styled.span`
+    color:  rgb(128, 204, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1.3rem;    
+`
+
 
 const Experience = () => {
   return (
     <PrincipalDiv>
-        <TittleSection>2. Experience</TittleSection>
+        <TittleSection>Experience</TittleSection>
         <SubTittle1Section>
             Software Develover at {" "}                          
             <CompanyName>
                 Easy Managemment
             </CompanyName>
-        </SubTittle1Section>
-        <ExperienceYears>
-            Mar 2021 - Present
-        </ExperienceYears>
+            {""} from Mar 2021 to present
+        </SubTittle1Section>        
+        <TittleExp>Stack</TittleExp>
+        <UlTecnologiesList>
+            <LiTecnologiesList>
+                <Separator> Backend </Separator> 
+                .Net 5 and 6
+                <Separator> - </Separator> 
+                .Net Framework 
+                <Separator> - </Separator>                 
+                C#.                
+            </LiTecnologiesList>                        
+            <LiTecnologiesList>
+                <Separator> Frontend </Separator> 
+                React
+                <Separator> - </Separator> 
+                Jquery
+                <Separator> - </Separator>                 
+                JS Vanilla
+                <Separator> - </Separator>                 
+                Angular 12
+                <Separator> - </Separator>                 
+                Bootstrap
+                <Separator> - </Separator>                 
+                Tailwind
+                <Separator> - </Separator>                 
+                CSS
+                <Separator> - </Separator>                 
+                HTML                
+                <Separator> - </Separator>                 
+                MVC .Net.
+            </LiTecnologiesList>                        
+            <LiTecnologiesList>
+                <Separator> Databases </Separator> 
+                Sql Server
+                <Separator> - </Separator> 
+                MySql.
+            </LiTecnologiesList>                        
+        </UlTecnologiesList>
+        <TittleExp>Functions</TittleExp>
         <UlTecnologiesList>
             <LiTecnologiesList>
                 Development of different software modules from Easy Management customers.
@@ -143,6 +195,29 @@ const Experience = () => {
                 Requirements gathering and user stories.
             </LiTecnologiesList>
         </UlTecnologiesList>
+
+        <TittleExp>Proyect DGAC</TittleExp>
+        <UlTecnologiesList>
+            <LiTecnologiesList>            
+            System to manage the invoice and billing from flight operations. I develop many reports and modules such a Invoice, Billing, ATFM, Estadistics modules,
+            and important features, for example the develop of functions that transform the radar flights data and transform that in item to invoice in the client.
+            </LiTecnologiesList>
+            <LiTecnologiesList>            
+            In this proyect I've working such a Full Stack Developer and Analyst, and I used .net 5, Rest API, EntityFramework, UnitOfWork Repository with Sql Server, and to Front I used Jquery, and MVC .Net.
+            </LiTecnologiesList>            
+        </UlTecnologiesList>
+
+        <TittleExp>Line Gestion</TittleExp>
+        <UlTecnologiesList>
+            <LiTecnologiesList>            
+            I worked y some user stories to "Poder Judicial de Costa Rica", in this proyect I worked also as a Full Stack Developer. A create a new view to the "fee calculate",
+            and realice many modifications in the dating module.
+            </LiTecnologiesList>
+            <LiTecnologiesList>            
+            I worked .net famework, Rest API with Store Procedures, and in the Cliente I worked with Angular 9.
+            </LiTecnologiesList>            
+        </UlTecnologiesList>
+
     </PrincipalDiv>
   )
 }
