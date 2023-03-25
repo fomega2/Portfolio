@@ -27,11 +27,11 @@ const DivPrincipalPresentation = styled.div`
         margin-bottom: 10%;                         
     }    
     @media ${device.tablet} {            
-        margin-top: 0%;         
+        margin-top: 15%;         
         margin-bottom: 10%;                 
     }    
     @media ${device.laptop} {            
-        margin-top: 0%;         
+        margin-top: 10%;         
         margin-bottom: 5;        
     }    
     @media ${device.laptopL} {            
@@ -40,8 +40,16 @@ const DivPrincipalPresentation = styled.div`
     }    
 `
 
+const Transition = keyframes`
+    0% { opacity: 0%}    
+    100% { opacity: 100%}
+`
+
 const DivBlockPresentation = styled.div`    
     display: block;    
+    animation-name:${Transition};
+    animation-duration: 2s;
+    animation-iteration-count: initial;    
 `
 
 const DivFlexPresentation = styled.div`    
@@ -50,6 +58,9 @@ const DivFlexPresentation = styled.div`
     margin-top: 5%;
     margin-right: 5%;
     margin-left: 5%;
+    animation-name:${Transition};
+    animation-duration: 2s;
+    animation-iteration-count: initial;    
     @media ${device.mobileS} {         
         display: block;    
     }    
@@ -131,16 +142,17 @@ const Paragraph = styled.h4`
     text-align: center;            
     @media ${device.mobileS} {
         margin-bottom:2rem;     
-        font-size: 1rem;
+        font-size: 2rem;
     }
     @media ${device.mobileM} {
         margin-bottom:2rem;     
-        font-size: 1rem;
+        font-size: 2rem;
     }
     @media ${device.mobileL} {                  
         font-size: 2rem;
     }
     @media ${device.tablet} {         
+        font-size: 2rem;
         width:80%;
         margin-left:10%;
         margin-right:10%;
@@ -157,10 +169,6 @@ const LinkInd = styled.a`
     }
 `
 
-const Arrows = styled.span`        
-    color:  rgb(128, 204, 255);    
-`
-
 const Presentation = () => {
   return (
     <DivPrincipalPresentation>
@@ -169,10 +177,8 @@ const Presentation = () => {
             <SecondTittle>My name is Fabián!</SecondTittle>        
             <SecondTittle>I build things for the web!</SecondTittle>        
             <Paragraph>I'm Full Stack Developer from Costa Rica, I love the web development and I open to new challenges. </Paragraph>                    
-            <Paragraph>You can know more about me, in my 
-                <Arrows> - </Arrows>
-                    <LinkInd href='https://www.linkedin.com/in/fabian-calderon-dev/' target={"_blank"}>LinkedIn</LinkInd> 
-                <Arrows> - </Arrows>
+            <Paragraph>You can know more about me, in my {""}                 
+                <LinkInd href='https://www.linkedin.com/in/fabian-calderon-dev/' target={"_blank"}>LinkedIn</LinkInd>                 
             </Paragraph>                    
         </DivBlockPresentation>
         <DivFlexPresentation>                

@@ -9,24 +9,6 @@ import { Link } from "react-router-dom";
 
 library.add({faBars});
 
-const DivLetterIconHeader = styled.div`        
-    display: none;        
-    font-size: 2rem;
-    font-weight: bold;
-    float: left;    
-    margin-left: 1rem;
-    color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: 0.7s;
-    cursor: pointer;    
-    &:hover{
-        color: rgb(128, 204, 255);
-    }        
-    @media ${device.tablet} { 
-        display: flex;        
-    }    
-`
-
 const UlHeader = styled.div`    
     display: block;                
     @media ${device.mobileS} { 
@@ -180,10 +162,7 @@ const Header = () => {
     
 
   return (
-    <div id='headerPrincipalDiv' className='divPrincipal'>
-        <DivLetterIconHeader>            
-            <Link onClick={handleSwichMenu} to={`/`} className='linkHeader' >F</Link>
-        </DivLetterIconHeader>        
+    <div id='headerPrincipalDiv' className='divPrincipal'>               
         <UlHeader>
                 <LiHeader>
                     <HambugerBtn onClick={() => handlerSetMenuActive()}>

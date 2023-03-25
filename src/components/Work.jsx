@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { keyframes } from 'styled-components'
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
@@ -9,12 +10,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 library.add({faGithub, faExternalLink});
 
+
+const Transition = keyframes`
+    0% { opacity: 0%}    
+    100% { opacity: 100%}
+`
+
+const ImgTransition = keyframes`
+    0% { opacity: 0%}    
+    100% { opacity: 50%}
+`
+
 const PrincipalDiv = styled.div`
     display:block;
     width : 100%;
     margin-left : 0%;
     margin-right : 0%;        
     margin-bottom: 10%;
+    animation-name:${Transition};
+    animation-duration: 2s;
+    animation-iteration-count: initial;    
     @media ${device.mobileS} { 
         width:100%;
         margin-top: 30%;
@@ -102,21 +117,24 @@ const Image = styled.img`
     &:hover{
         opacity:100%;
     }
+    animation-name:${ImgTransition};
+    animation-duration: 2s;
+    animation-iteration-count: unset;    
     @media ${device.mobileS} { 
-        width:100%;
-        height:100%;
+        width:350px;
+        height:200px;
     } 
     @media ${device.mobileM} { 
-        width:100%;
-        height:100%;
+        width:370px;
+        height:220px;
     } 
     @media ${device.mobileL} {         
-        width:100%;
-        height:100%;
+        width:370px;
+        height:220px;
     } 
     @media ${device.tablet} { 
-        width:100%;
-        height:100%;
+        width:800px;
+        height:430px;
     }      
     @media ${device.laptop} {         
         width:800px;

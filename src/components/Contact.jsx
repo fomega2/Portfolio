@@ -1,14 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
+import { keyframes } from 'styled-components'
 import device from './Devices';
 
+const Transition = keyframes`
+    0% { opacity: 0%}    
+    100% { opacity: 100%}
+`
+
 const PrincipalDiv = styled.div`
-    display:block;
+    display:flex;
+    flex-direction:column;
     width : 70%;
     margin-left : 15%;
     margin-right : 15%;        
     margin-bottom: 10%;    
     margin-top: 10%;    
+    animation-name:${Transition};
+    animation-duration: 2s;
+    animation-iteration-count: initial;    
     @media ${device.mobileM} { 
         width : 100%;
         margin-left : 0%;
@@ -24,6 +34,7 @@ const PrincipalDiv = styled.div`
 `
 
 const TittleSection = styled.h4`    
+    
     color:  rgb(128, 204, 255);
     font-size: 2rem;
     font-weight:bold;
@@ -75,10 +86,12 @@ const TextSection = styled.p`
 `
 
 const BtnContainer1 = styled.div`    
-    text-align:center;
+    display : flex;
+    justify-content: center;
 `
 
 const SendMsgBtn = styled.a`    
+    
     padding: 1rem;
     margin-top: 1rem;    
     background-color: transparent;
