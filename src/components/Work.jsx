@@ -46,13 +46,13 @@ const PrincipalDiv = styled.div`
         width : 70%;
         margin-left : 15%;
         margin-right : 15%;
-        margin-top: 0%;
+        margin-top: 10;
     }      
     @media ${device.laptop} {         
         width : 70%;
         margin-left : 15%;
         margin-right : 15%;
-        margin-top: 0%;
+        margin-top: 10%;
     }          
 `
 
@@ -60,11 +60,26 @@ const TittleSection = styled.h4`
     display:flex;        
     text-align:center;
     color:  rgb(128, 204, 255);
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight:bold;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;    
     @media ${device.tablet} {         
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }    
+`
+
+const TittlePrinSection = styled.h4`    
+    display:flex;        
+    text-align:center;
+    color:  rgb(128, 204, 255);
+    font-size: 1.3rem;
+    font-weight:bold;
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;    
+    @media ${device.tablet} {         
+        font-size: 1.6rem;
     }    
 `
 
@@ -78,6 +93,18 @@ const ContainerDiv = styled.div`
     margin-right : 0%;        
     margin-top: 2%;    
     margin-bottom: 2%;    
+`
+
+const ContainerTittle = styled.div`    
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    margin: -1%;
+    width : 100%;
+    margin-left : 0%;
+    margin-right : 0%;        
+    margin-top: 2%;        
+    margin-bottom: 0%;        
 `
 
 const ButtonDivs = styled.div`
@@ -164,7 +191,7 @@ const ProyectLink = styled.button`
     cursor: pointer;
     display:flex;    
     margin:0;    
-    border:none;
+    border:none;    
     width: 10%;
     font-size:0.1rem;    
     font-family: Arial, Helvetica, sans-serif;                
@@ -221,8 +248,11 @@ const Work = () => {
 
   return (
     <PrincipalDiv>
-        <ContainerDiv>
-            <TittleSection>Work - {imageObj.Name}                 
+        <ContainerTittle>
+            <TittlePrinSection>Work and some things that I've built</TittlePrinSection>            
+        </ContainerTittle>
+        <ContainerDiv>            
+            <TittleSection> {imageObj.Name}                 
             </TittleSection>
             {
                 imageObj.Link.length > 0 &&  

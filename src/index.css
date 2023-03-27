@@ -1,5 +1,5 @@
 @keyframes slideShowDivHeader {
-    0% { top: -10%;}
+    0% { top: -12%;}
     10% { top: -9%;}
     20% { top: -8%;}
     30% { top: -7%;}
@@ -13,7 +13,7 @@
 }
 
 @keyframes scrollShowAnimation {
-    0% { top: -10%;}
+    0% { top: -12%;}
     10% { top: -9%;}
     20% { top: -8%;}
     30% { top: -7%;}
@@ -37,7 +37,7 @@
     70% { top: -7%; }
     80% { top: -8%; }
     90% { top: -9%; }
-    100% { top: -10%; }    
+    100% { top: -12%; }    
 }
 
 .divPrincipal{
@@ -81,8 +81,8 @@
 }
 
 .iconRouter{
-    padding:1rem;
-    margin:1rem;
+    padding:0.2em;
+    margin:0rem;
     background-color: transparent;
     font-size:3rem;    
     height:35%;

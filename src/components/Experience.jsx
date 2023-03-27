@@ -38,6 +38,12 @@ const PrincipalDiv = styled.div`
         margin-right : 10%;
         margin-top : 10%;
     }        
+    @media ${device.laptopL} { 
+        width : 70%;
+        margin-left : 15%;
+        margin-right : 15%;
+        margin-top : 10%;
+    }        
 `
 
 const Transition = keyframes`

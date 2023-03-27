@@ -5,19 +5,22 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import device from './Devices';
 import '../index.css'
+import FabianCV from "../media/FabianCV.pdf"
 import { Link } from "react-router-dom";
 
 library.add({faBars});
 
 const UlHeader = styled.div`    
-    display: block;                
+    display: block;            
+    margin-right:2em;    
     @media ${device.mobileS} { 
         display: flex;        
         flex-direction:column;
         width:100%;
         background-color: black;
         float:right;
-        display: flex;        
+        display: flex;       
+        margin-right:0em;     
     }   
     @media ${device.mobileM} { 
         display: flex;        
@@ -26,6 +29,7 @@ const UlHeader = styled.div`
         background-color: black;
         float:right;
         display: flex;        
+        margin-right:0em;    
     }   
     @media ${device.mobileL} { 
         display: flex;        
@@ -33,11 +37,13 @@ const UlHeader = styled.div`
         width:100%;
         background-color: black;
         float:right;        
+        margin-right:0em;    
     }   
     @media ${device.tablet} { 
         display: flex;
         flex-direction: row;
         width:auto;
+        margin-right:2em;    
     }    
 `
 
@@ -189,7 +195,7 @@ const Header = () => {
                             <Link onClick={handleSwichMenu} to={`/Contact`} className='linkHeader' >Contact</Link>
                         </LiHeaderHamburger>                        
                         <LiHeaderHamburger>
-                            <a onClick={handleSwichMenu} href="src/media/FabianCV.pdf" download="FabianCV.pdf"  className='linkHeader'>My CV</a>
+                            <a onClick={handleSwichMenu} href={FabianCV} download="FabianCV.pdf"  className='linkHeader'>My CV</a>
                         </LiHeaderHamburger>                        
                     </>                                                        
                 }                    
