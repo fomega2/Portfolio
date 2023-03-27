@@ -1,5 +1,5 @@
-import ANE from '../media/images/ane.png'
-import DGAC from '../media/images/DGAC.png'
+import ANE from '../../dist/assets/ane-10bc6ff0.png'
+import DGAC from '../media/images/DGAC-c567c2cf.png'
 import LineGestion from '../media/images/LineGestion.png'
 import PatientAdminImg from '../media/images/PatientAdminImg.png'
 
