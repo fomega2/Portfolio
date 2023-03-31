@@ -7,6 +7,7 @@ import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import device from './Devices';
 import { ProyectsInfoConstant } from '../Utils/ProyectsInfoConstant';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 library.add({faGithub, faExternalLink});
 
@@ -136,7 +137,7 @@ const ImageDiv = styled.div`
     justify-content:center;
 `
 
-const Image = styled.img`
+const Image = styled.div`
     width:800px;
     height:430px;
     opacity:50%;
@@ -263,7 +264,10 @@ const Work = () => {
         </ContainerDiv>
         <ContainerDiv>
             <ImageDiv>                
-                <Image loading="lazy" src={imageObj.ImageRoute}></Image> 
+            <LazyLoadImage className='Image'
+                    src={imageObj.ImageRoute}
+                    alt={imageObj.Name}                    
+                />
                 <ImageInformation>
                     <p>Description: {imageObj.Description}</p>
                     <p>Stack: {imageObj.Stack}</p>

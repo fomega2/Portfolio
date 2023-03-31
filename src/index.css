@@ -151,3 +151,66 @@
 .linkHeader:hover{
     color: rgb(128, 204, 255);
 }       
+
+
+
+//Work Images
+
+@keyframes ImgTransition {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 50%;
+  }
+}
+
+.Image {
+  width: 800px;
+  height: 430px;
+  opacity: 50%;
+  transition: 0.6s;
+  animation-name: ${ImgTransition};
+  animation-duration: 2s;
+  animation-iteration-count: unset;
+}
+
+.Image:hover {
+  opacity: 100%;
+}
+
+@media ${device.mobileS} {
+  .Image {
+    width: 350px;
+    height: 200px;
+  }
+}
+
+@media ${device.mobileM} {
+  .Image {
+    width: 370px;
+    height: 220px;
+  }
+}
+
+@media ${device.mobileL} {
+  .Image {
+    width: 370px;
+    height: 220px;
+  }
+}
+
+@media ${device.tablet} {
+  .Image {
+    width: 800px;
+    height: 430px;
+  }
+}
+
+@media ${device.laptop} {
+  .Image {
+    width: 800px;
+    height: 430px;
+  }
+}
+
