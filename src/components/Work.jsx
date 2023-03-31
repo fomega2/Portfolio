@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { keyframes } from 'styled-components'
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -9,7 +9,7 @@ import { ProyectsInfoConstant } from '../Utils/ProyectsInfoConstant';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-library.add({faGithub, faExternalLink});
+library.add({ faGithub, faExternalLink });
 
 
 const Transition = keyframes`
@@ -216,73 +216,75 @@ const ProyectLink = styled.button`
 `
 
 const Work = () => {
-    const imagesInfo = ProyectsInfoConstant;    
+    const imagesInfo = ProyectsInfoConstant;
     const imagesMax = imagesInfo.length - 1;
     const [imageObj, setImageObj] = useState(imagesInfo[0]);
     const [position, setPosition] = useState(0);
 
-    const handleSimplePaginationBack = () =>{                   
-        if(position - 1 >= 0){
+    const handleSimplePaginationBack = () => {
+        if (position - 1 >= 0) {
             setPosition(position - 1)
             setImageObj(imagesInfo[position - 1])
-        }else{
+        } else {
             setPosition(imagesMax)
             setImageObj(imagesInfo[imagesMax])
-        } 
+        }
     }
 
-    const handleSimplePaginationNext = () =>{
-        if(position + 1 <= imagesMax){
+    const handleSimplePaginationNext = () => {
+        if (position + 1 <= imagesMax) {
             setPosition(position + 1)
             setImageObj(imagesInfo[position + 1])
-        }else{
+        } else {
             setPosition(0)
             setImageObj(imagesInfo[0])
         }
-    }    
+    }
 
-    const handleProyectRedirect = () =>{
+    const handleProyectRedirect = () => {
         window.open(imageObj.Link, '_blank');
-    }    
+    }
 
-    console.log(imageObj.ImageRoute)
-
-  return (
-    <PrincipalDiv>
-        <ContainerTittle>
-            <TittlePrinSection>Work and some things that I've built</TittlePrinSection>            
-        </ContainerTittle>
-        <ContainerDiv>            
-            <TittleSection> {imageObj.Name}                 
-            </TittleSection>
-            {
-                imageObj.Link.length > 0 &&  
-                <ProyectLink onClick={handleProyectRedirect}>
-                 <FontAwesomeIcon className='iconRouter' icon="fas fa-external-link" />            
-                </ProyectLink>
-            }            
-        </ContainerDiv>
-        <ContainerDiv>
-            <ImageDiv>                
-            <LazyLoadImage className='Image'
-                    src={imageObj.ImageRoute}
-                    alt={imageObj.Name}                    
-                />
-                <ImageInformation>
-                    <p>Description: {imageObj.Description}</p>
-                    <p>Stack: {imageObj.Stack}</p>
-                </ImageInformation>
-            </ImageDiv>
-        </ContainerDiv>
-        <ContainerDiv>
-            <ButtonDivs>
-                <PaginatioButton onClick={handleSimplePaginationBack}>Back</PaginatioButton>
-                <PaginatioButton onClick={handleSimplePaginationNext}>Next</PaginatioButton>
-            </ButtonDivs>            
-        </ContainerDiv>        
-    </PrincipalDiv>
+    useEffect(function(){
         
-  )
+    },[position])
+
+    return (
+        <PrincipalDiv>
+            <ContainerTittle>
+                <TittlePrinSection>Work and some things that I've built</TittlePrinSection>
+            </ContainerTittle>
+            <ContainerDiv>
+                <TittleSection> {imageObj.Name}
+                </TittleSection>
+                {
+                    imageObj.Link.length > 0 &&
+                    <ProyectLink onClick={handleProyectRedirect}>
+                        <FontAwesomeIcon className='iconRouter' icon="fas fa-external-link" />
+                    </ProyectLink>
+                }
+            </ContainerDiv>
+            <ContainerDiv>
+                <ImageDiv>
+                    <LazyLoadImage className='Image'
+                        src={imageObj.ImageRoute}
+                        alt={imageObj.Name}
+                    />
+                    <ImageInformation>
+                        <p>Description: {imageObj.Description}</p>
+                        <p>Stack: {imageObj.Stack}</p>
+                    </ImageInformation>
+                </ImageDiv>
+            </ContainerDiv>
+            <ContainerDiv>
+                <ButtonDivs>
+                    <PaginatioButton onClick={handleSimplePaginationBack}>Back</PaginatioButton>
+                    <PaginatioButton onClick={handleSimplePaginationNext}>Next</PaginatioButton>
+                </ButtonDivs>
+            </ContainerDiv>
+        </PrincipalDiv>
+
+    )
 }
 
 export default Work
