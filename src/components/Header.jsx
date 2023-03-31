@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import device from './Devices';
-import '../index.css'
-import FabianCV from "../media/FabianCV.pdf"
+import '../index.css';
+import FabianCV from "/files/FabianCV.pdf";
 import { Link } from "react-router-dom";
 
 library.add({faBars});
