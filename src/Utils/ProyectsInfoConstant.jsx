@@ -1,5 +1,3 @@
-import test from "../../public/files/test.png"
-
 export const ProyectsInfoConstant = [    
     {
         Name: "PJ Line Gestion",
@@ -52,7 +50,7 @@ export const ProyectsInfoConstant = [
     },            
     {
         Name: "Budget Controller",
-        Description: "I built it in my free time to learn more about the framework.",        
+        Description: "Same, I built it in my free time to learn more about the framework.",        
         Stack: "Create React App - Bootstrap - LocalStorage",        
         Link: "https://jovial-colden-b4dd8f.netlify.app/",
         ImageRoute: "https://i.imgur.com/oc1wPkp.png",        
@@ -66,7 +64,7 @@ export const ProyectsInfoConstant = [
     },            
     {
         Name: "Car Quoter",
-        Description: "Simulator of Car Quoter.",        
+        Description: "Simulation of Car Quotes.",        
         Stack: "Create React App - StyledComponents",        
         Link: "https://flamboyant-noyce-96c674.netlify.app/",
         ImageRoute: "https://i.imgur.com/LFIWwsq.png",        

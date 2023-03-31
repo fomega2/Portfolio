@@ -121,10 +121,10 @@ const SendMsgBtn = styled.a`
 const Contact = () => {
   return (
     <PrincipalDiv>
-        <TittleSection>3. Contact</TittleSection>
+        <TittleSection>Contact</TittleSection>
         <SubTittleSection>Get In Touch</SubTittleSection>
         <TextSection>
-            Although I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </TextSection>
         <BtnContainer1>
             <SendMsgBtn href='mailto:fcalderon@gmail.com?subject=DM&body= ¡HELLO! '>Send a MSG!</SendMsgBtn>
