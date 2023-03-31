@@ -1,10 +1,12 @@
+import test from "../../public/files/test.png"
+
 export const ProyectsInfoConstant = [    
     {
         Name: "PJ Line Gestion",
         Description: "Site of Judiciary of Costa Rice, wheren I've worked and some modules",        
         Stack: "Angular - .Net - Rest API - SqlServer",        
         Link: "https://pjenlinea.poder-judicial.go.cr/GestionEnLinea/inicio#googtrans(es%7Ces)",        
-        ImageRoute: "https://i.imgur.com/CQfi6x9.png",        
+        ImageRoute: test,        
     },
     {
         Name: "ANE",

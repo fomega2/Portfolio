@@ -8,10 +8,8 @@ import device from './Devices';
 import { ProyectsInfoConstant } from '../Utils/ProyectsInfoConstant';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BeatLoader from "react-spinners/ClipLoader";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 library.add({ faGithub, faExternalLink });
-
 
 const Transition = keyframes`
     0% { opacity: 0%}    
@@ -308,20 +306,20 @@ const Work = () => {
                 {
                     flagSpinner
                         ?
-                            <SpinnerDiv>
-                                <BeatLoader
-                                    color={"rgb(128, 204, 255)"}
-                                    size={150}
-                                    aria-label="Loading Spinner"
-                                    data-testid="loader"
-                                    loading={flagSpinner}
-                                />
-                            </SpinnerDiv>
+                        <SpinnerDiv>
+                            <BeatLoader
+                                color={"rgb(128, 204, 255)"}
+                                size={150}
+                                aria-label="Loading Spinner"
+                                data-testid="loader"
+                                loading={flagSpinner}
+                            />
+                        </SpinnerDiv>
                         :
                         <>
                             <ContainerDiv>
                                 <ImageDiv>
-                                    <LazyLoadImage className='Image'
+                                    <Image
                                         src={imageObj.ImageRoute}
                                         alt={imageObj.Name}
                                     />

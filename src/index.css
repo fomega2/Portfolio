@@ -177,7 +177,7 @@
 }
 
 //mobileS
-@media (min-width:320px) {
+@media only screen and (min-width:320px) {
   .Image {
     width: 350px;
     height: 200px;
@@ -185,7 +185,7 @@
 }
 
 //mobileM
-@media (min-width:375px) {
+@media only screen and (min-width:375px) {
   .Image {
     width: 370px;
     height: 220px;
@@ -193,7 +193,7 @@
 }
 
 //mobileL
-@media (min-width:425px) {
+@media only screen and (min-width:425px) {
   .Image {
     width: 370px;
     height: 220px;
@@ -201,7 +201,7 @@
 }
 
 //tablet
-@media (min-width:768px) {
+@media only screen and (min-width:768px) {
   .Image {
     width: 800px;
     height: 430px;
@@ -209,7 +209,7 @@
 }
 
 //laptop
-@media (min-width:1024px) {
+@media only screen and (min-width:1024px) {
   .Image {
     width: 800px;
     height: 430px;
