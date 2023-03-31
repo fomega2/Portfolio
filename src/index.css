@@ -177,35 +177,40 @@
   opacity: 100%;
 }
 
-@media ${device.mobileS} {
+//mobileS
+@media (min-width:320px) {
   .Image {
     width: 350px;
     height: 200px;
   }
 }
 
-@media ${device.mobileM} {
+//mobileM
+@media (min-width:375px) {
   .Image {
     width: 370px;
     height: 220px;
   }
 }
 
-@media ${device.mobileL} {
+//mobileL
+@media (min-width:425px) {
   .Image {
     width: 370px;
     height: 220px;
   }
 }
 
-@media ${device.tablet} {
+//tablet
+@media (min-width:768px) {
   .Image {
     width: 800px;
     height: 430px;
   }
 }
 
-@media ${device.laptop} {
+//laptop
+@media (min-width:1024px) {
   .Image {
     width: 800px;
     height: 430px;
