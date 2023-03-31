@@ -7,6 +7,7 @@ import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import device from './Devices';
 import { ProyectsInfoConstant } from '../Utils/ProyectsInfoConstant';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BeatLoader from "react-spinners/ClipLoader";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 library.add({ faGithub, faExternalLink });
@@ -94,6 +95,32 @@ const ContainerDiv = styled.div`
     margin-right : 0%;        
     margin-top: 2%;    
     margin-bottom: 2%;    
+`
+const SpinnerDiv = styled.div`    
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    margin: -1%;
+    width : 100%;
+    margin-left : 0%;
+    margin-right : 0%;        
+    margin-top: 10%;    
+    margin-bottom: 5%;    
+    @media ${device.mobileS} { 
+        margin-top: 40%;
+    } 
+    @media ${device.mobileM} { 
+        margin-top: 40%;
+    } 
+    @media ${device.mobileL} {         
+        margin-top: 40%;
+    } 
+    @media ${device.tablet} { 
+        margin-top: 10%;
+    }      
+    @media ${device.laptop} {                 
+        margin-top: 10%;
+    }          
 `
 
 const ContainerTittle = styled.div`    
@@ -220,6 +247,7 @@ const Work = () => {
     const imagesMax = imagesInfo.length - 1;
     const [imageObj, setImageObj] = useState(imagesInfo[0]);
     const [position, setPosition] = useState(0);
+    const [flagSpinner, setFlagSpinner] = useState(false);
 
     const handleSimplePaginationBack = () => {
         if (position - 1 >= 0) {
@@ -245,9 +273,18 @@ const Work = () => {
         window.open(imageObj.Link, '_blank');
     }
 
-    useEffect(function(){
-        
-    },[position])
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    useEffect(function () {
+        const changeSpinnerFlag = async () => {
+            setFlagSpinner(true)
+            await delay(1000)
+            setFlagSpinner(false)
+        }
+        changeSpinnerFlag();
+    }, [position])
 
     return (
         <PrincipalDiv>
@@ -264,24 +301,47 @@ const Work = () => {
                     </ProyectLink>
                 }
             </ContainerDiv>
-            <ContainerDiv>
-                <ImageDiv>
-                    <LazyLoadImage className='Image'
-                        src={imageObj.ImageRoute}
-                        alt={imageObj.Name}
-                    />
-                    <ImageInformation>
-                        <p>Description: {imageObj.Description}</p>
-                        <p>Stack: {imageObj.Stack}</p>
-                    </ImageInformation>
-                </ImageDiv>
-            </ContainerDiv>
-            <ContainerDiv>
-                <ButtonDivs>
-                    <PaginatioButton onClick={handleSimplePaginationBack}>Back</PaginatioButton>
-                    <PaginatioButton onClick={handleSimplePaginationNext}>Next</PaginatioButton>
-                </ButtonDivs>
-            </ContainerDiv>
+            <div>
+
+            </div>
+            <>
+                {
+                    flagSpinner
+                        ?
+                            <SpinnerDiv>
+                                <BeatLoader
+                                    color={"rgb(128, 204, 255)"}
+                                    size={150}
+                                    aria-label="Loading Spinner"
+                                    data-testid="loader"
+                                    loading={flagSpinner}
+                                />
+                            </SpinnerDiv>
+                        :
+                        <>
+                            <ContainerDiv>
+                                <ImageDiv>
+                                    <LazyLoadImage className='Image'
+                                        src={imageObj.ImageRoute}
+                                        alt={imageObj.Name}
+                                    />
+                                    <ImageInformation>
+                                        <p>Description: {imageObj.Description}</p>
+                                        <p>Stack: {imageObj.Stack}</p>
+                                    </ImageInformation>
+                                </ImageDiv>
+
+                            </ContainerDiv>
+                            <ContainerDiv>
+                                <ButtonDivs>
+                                    <PaginatioButton onClick={handleSimplePaginationBack}>Back</PaginatioButton>
+                                    <PaginatioButton onClick={handleSimplePaginationNext}>Next</PaginatioButton>
+                                </ButtonDivs>
+                            </ContainerDiv>
+                        </>
+                }
+            </>
+
         </PrincipalDiv>
 
     )
