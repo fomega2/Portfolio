@@ -47,7 +47,7 @@ export const ProyectsInfoConstant = [
         Name: "Patient Manager",
         Description: "I built it in my free time to learn more about the framework.",        
         Stack: "React - VITE - Tailwind - LocalStorage",        
-        Link: "https://app.netlify.com/sites/flamboyant-northcutt-b84f1d/overview",
+        Link: "https://flamboyant-northcutt-b84f1d.netlify.app/",
         ImageRoute: "https://i.imgur.com/GJtYmnt.png",        
     },            
     {
