@@ -162,7 +162,7 @@ const ImageDiv = styled.div`
     justify-content:center;
 `
 
-const Image = styled.div`
+const Image = styled.img`
     width:800px;
     height:430px;
     opacity:50%;

@@ -6,7 +6,7 @@ export const ProyectsInfoConstant = [
         Description: "Site of Judiciary of Costa Rice, wheren I've worked and some modules",        
         Stack: "Angular - .Net - Rest API - SqlServer",        
         Link: "https://pjenlinea.poder-judicial.go.cr/GestionEnLinea/inicio#googtrans(es%7Ces)",        
-        ImageRoute: test,        
+        ImageRoute: "https://i.imgur.com/CQfi6x9.png",        
     },
     {
         Name: "ANE",
