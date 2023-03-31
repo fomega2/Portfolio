@@ -1,14 +1,3 @@
-import ANE from '/images/ANE.png'
-import DGAC from '/images/DGAC.png'
-import LineGestion from '/images/LineGestion.png'
-import PatientAdminImg from '/images/PatientAdminImg.png'
-import EasyConta from '/images/EasyConta.png'
-import BudgetController from '/images/BudgetController.png'
-import CarQuoter from '/images/CarQuoter.png'
-import AngularCrud from '/images/AngularCrud.jpeg'
-import ImageFinder from '/images/ImageFinder.png'
-import Portfolio from '/images/Portfolio.png'
-
 export const ProyectsInfoConstant = [    
     {
         Name: "PJ Line Gestion",
@@ -36,48 +25,62 @@ export const ProyectsInfoConstant = [
         Description: "Invoice DGAC System of Costa Rica Civil Aviation",        
         Stack: ".Net 5, .Net MVC, Sql Server, Jquery",        
         Link: "https://cetacfacturacion.dgac.go.cr/",
-        ImageRoute: "https://imgur.com/UzgZipM",        
+        ImageRoute: "https://i.imgur.com/UzgZipM.png",        
     },    
+    {
+        Name: "My portfolio",
+        Description: "Static page to share my experience.",        
+        Stack: "React - Vite - Styled Component - Router",        
+        Link: "https://mellow-rugelach-97b523.netlify.app/",
+        ImageRoute: "https://i.imgur.com/pOEJdRl.png",        
+    },                
+    {
+        Name: "Go Rental",
+        Description: "Informative and sales monitoring site.",        
+        Stack: ".Net 6 - Entity Framework - JS",        
+        Link: "https://mellow-rugelach-97b523.netlify.app/",
+        ImageRoute: "https://i.imgur.com/pOEJdRl.png",        
+    },            
     {
         Name: "Patient Manager",
         Description: "I built it in my free time to learn more about the framework.",        
         Stack: "React - VITE - Tailwind - LocalStorage",        
         Link: "https://app.netlify.com/sites/flamboyant-northcutt-b84f1d/overview",
-        ImageRoute: "https://imgur.com/GJtYmnt",        
+        ImageRoute: "https://i.imgur.com/GJtYmnt.png",        
     },            
     {
         Name: "Budget Controller",
         Description: "I built it in my free time to learn more about the framework.",        
         Stack: "Create React App - Bootstrap - LocalStorage",        
         Link: "https://jovial-colden-b4dd8f.netlify.app/",
-        ImageRoute: "https://imgur.com/oc1wPkp",        
+        ImageRoute: "https://i.imgur.com/oc1wPkp.png",        
     },            
     {
         Name: "Angular Crud",
         Description: "Simple angular CRUD.",        
-        Stack: "Angular - Tailwind - Routing",        
+        Stack: "Angular - .Net 6 - Tailwind - Routing",        
         Link: "",
-        ImageRoute: "https://imgur.com/EDNMvYU",        
+        ImageRoute: "https://i.imgur.com/EDNMvYU.jpg",        
     },            
     {
         Name: "Car Quoter",
         Description: "Simulator of Car Quoter.",        
         Stack: "Create React App - StyledComponents",        
         Link: "https://flamboyant-noyce-96c674.netlify.app/",
-        ImageRoute: CarQuoter,        
+        ImageRoute: "https://i.imgur.com/LFIWwsq.png",        
     },            
     {
         Name: "Image Search",
         Description: "Simple image search.",        
         Stack: "React - Vite - Tailwind",        
-        Link: "https://lovely-kheer-2e20b4.netlify.app/",
-        ImageRoute: "https://imgur.com/9QEpeWG",        
-    },            
+        Link: "https://i.imgur.com/9QEpeWG.png",
+        ImageRoute: "https://i.imgur.com/LFIWwsq.png",        
+    },                
     {
-        Name: "My portfolio",
-        Description: "Static page to share my experience.",        
-        Stack: "React - Vite - Styled Component - Router",        
-        Link: "https://mellow-rugelach-97b523.netlify.app/",
-        ImageRoute: "https://imgur.com/pOEJdRl",        
-    },            
+        Name: "HS WebSite",
+        Description: "Informative and route manager site.",        
+        Stack: ".Net 6 - Entity Framework - JS",        
+        Link: "https://i.imgur.com/XbmboUx.png",
+        ImageRoute: "https://i.imgur.com/pOEJdRl.png",        
+    }            
 ];
