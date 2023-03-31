@@ -263,7 +263,7 @@ const Work = () => {
         </ContainerDiv>
         <ContainerDiv>
             <ImageDiv>                
-                <Image src={imageObj.ImageRoute}></Image> 
+                <Image loading="lazy" src={imageObj.ImageRoute}></Image> 
                 <ImageInformation>
                     <p>Description: {imageObj.Description}</p>
                     <p>Stack: {imageObj.Stack}</p>
