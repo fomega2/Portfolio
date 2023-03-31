@@ -31,15 +31,15 @@ export const ProyectsInfoConstant = [
         Name: "My portfolio",
         Description: "Static page to share my experience.",        
         Stack: "React - Vite - Styled Component - Router",        
-        Link: "https://mellow-rugelach-97b523.netlify.app/",
+        Link: "",
         ImageRoute: "https://i.imgur.com/pOEJdRl.png",        
     },                
     {
         Name: "Go Rental",
         Description: "Informative and sales monitoring site.",        
         Stack: ".Net 6 - Entity Framework - JS",        
-        Link: "https://mellow-rugelach-97b523.netlify.app/",
-        ImageRoute: "https://i.imgur.com/pOEJdRl.png",        
+        Link: "https://www.gorentalcr.com/",
+        ImageRoute: "https://i.imgur.com/0BpI9di.png",        
     },            
     {
         Name: "Patient Manager",
@@ -59,7 +59,7 @@ export const ProyectsInfoConstant = [
         Name: "Angular Crud",
         Description: "Simple angular CRUD.",        
         Stack: "Angular - .Net 6 - Tailwind - Routing",        
-        Link: "",
+        Link: "https://github.com/fomega2/angular_first_crud",
         ImageRoute: "https://i.imgur.com/EDNMvYU.jpg",        
     },            
     {
@@ -73,14 +73,14 @@ export const ProyectsInfoConstant = [
         Name: "Image Search",
         Description: "Simple image search.",        
         Stack: "React - Vite - Tailwind",        
-        Link: "https://i.imgur.com/9QEpeWG.png",
-        ImageRoute: "https://i.imgur.com/LFIWwsq.png",        
+        Link: "https://lovely-kheer-2e20b4.netlify.app/",
+        ImageRoute: "https://i.imgur.com/9QEpeWG.png",        
     },                
     {
         Name: "HS WebSite",
         Description: "Informative and route manager site.",        
         Stack: ".Net 6 - Entity Framework - JS",        
         Link: "https://i.imgur.com/XbmboUx.png",
-        ImageRoute: "https://i.imgur.com/pOEJdRl.png",        
+        ImageRoute: "https://i.imgur.com/XbmboUx.png",        
     }            
 ];
