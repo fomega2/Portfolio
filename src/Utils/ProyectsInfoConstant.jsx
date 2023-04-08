@@ -55,13 +55,13 @@ export const ProyectsInfoConstant = [
         Link: "https://jovial-colden-b4dd8f.netlify.app/",
         ImageRoute: "https://i.imgur.com/oc1wPkp.png",        
     },            
-    {
-        Name: "Angular Crud",
-        Description: "Simple angular CRUD.",        
-        Stack: "Angular - .Net 6 - Tailwind - Routing",        
-        Link: "https://github.com/fomega2/angular_first_crud",
-        ImageRoute: "https://i.imgur.com/EDNMvYU.jpg",        
-    },            
+    // {
+    //     Name: "Angular Crud",
+    //     Description: "Simple angular CRUD.",        
+    //     Stack: "Angular - .Net 6 - Tailwind - Routing",        
+    //     Link: "https://github.com/fomega2/angular_first_crud",
+    //     ImageRoute: "https://i.imgur.com/EDNMvYU.jpg",        
+    // },            
     {
         Name: "Car Quoter",
         Description: "Simulation of Car Quotes.",        
