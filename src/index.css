@@ -52,6 +52,18 @@
     margin-top: 1rem;    
 }
 
+.divPrincipal{
+    position:fixed;
+    top:0%;
+    left:0px;
+    z-index:1000;
+    display: block;    
+    animation-name: slideShowDivHeader;
+    animation-duration: 0.2s;
+    width:100%;  
+    margin-top: 1rem;    
+}
+
 .scrollShow{    
     animation-name: scrollShowAnimation;
     animation-duration: 0.2s;    
