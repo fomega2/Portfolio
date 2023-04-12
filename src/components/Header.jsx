@@ -129,16 +129,22 @@ const Overlay = styled.div`
 const Header = () => { 
     const [menuActive, setMenuActive] = useState(false);     
     const handlerSetMenuActive = () =>{    
-        menuActive ? setMenuActive(false) :setMenuActive(true);        
+        if(menuActive){
+            setMenuActive(false)
+            document.body.style.overflow = 'auto';
+        }else{
+            setMenuActive(true)
+            document.body.style.overflow = 'hidden';
+        }        
     }
 
     let widthMatch = window.matchMedia(device.tablet);    
     widthMatch.addEventListener('change', function(mm) {
         if (mm.matches) {
-            setMenuActive(true);            
+            setMenuActive(true);                        
         }
         else {
-            setMenuActive(false);            
+            setMenuActive(false);                        
         }
     });
 
@@ -159,6 +165,7 @@ const Header = () => {
     const handleSwichMenu = () =>{
         if(window.innerWidth < 728){
             setMenuActive(false);
+            document.body.style.overflow = 'auto';
         }
     }
 
@@ -168,7 +175,7 @@ const Header = () => {
     
 
   return (
-    <div id='headerPrincipalDiv' className='divPrincipal'>               
+    <div id='headerPrincipalDiv' className={menuActive ? "divPrincipal overflowHide" : "divPrincipal"}>               
         <UlHeader>
                 <LiHeader>
                     <HambugerBtn onClick={() => handlerSetMenuActive()}>
